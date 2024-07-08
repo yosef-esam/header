@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      .swiper {
+        width: 100%;
+        height: 614px;
+      }
+      .swiper-pagination {
+        position: absolute;
+        bottom: 3px;
+      }
+
+      .swiper-pagination-bullet {
+        position: relative;
+        width: 50px;
+        height: 2px;
+        background: gray;
+        border-radius: 50%;
+        opacity: 1;
+        transition: width 0.3s;
+      }
+
+      .swiper-pagination-bullet-active {
+        width: 50px;
+        height: 3px;
+        border-radius: 4px;
+      }
+
+      .swiper-pagination-bullet-active::before {
+        content: "";
+        display: block;
+        height: 3px;
+        background: white;
+        animation: load 6s linear infinite;
+      }
+
+      @keyframes load {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body class="font-sans bg-black overflow-x-hidden">
+    <header class="flex items-center justify-between h-20 px-10 bg-[#282828]">
+      <div class="font-bold text-2xl text-white">
+        <img
+          src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/logo-focal.png?v=1630492228&width=200"
+          alt=""
+          class="w-[95px] h-[19px] cursor-pointer"
+        />
+      </div>
+      <nav class="flex gap-6">
+        <div class="group dropdown cursor-pointer tracking-wide">
+          <a
+            href="#"
+            class="relative pb-5 text-white w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-white after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left"
+            >Shop by Category</a
+          >
+          <div
+            class="z-10 group-hover:block dropdown-menu absolute right-0 hidden h-[auto] bg-white text-black w-[1536px]"
+          >
+            <div class="flex justify-evenly p-[50px] animate-fadeInUp">
+              <div class="mr-10 mt-10">
+                <h4 class="font-bold">PROTECT & CARRY</h4>
+                <ul>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone Cases</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >AirPods Cases</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Sleeves</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Accessories</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mr-10 mt-10">
+                <h4 class="font-bold">CABLES</h4>
+                <ul>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500">USB-A</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500">USB-C</a>
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Lightning</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Apple Watch</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >View All</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col items-center mt-10">
+                <div>
+                  <img
+                    src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/iphone-cases.jpg?v=1630492487&width=560"
+                    alt="iPhone Cases Image"
+                    class="mb-4 w-[240px] h-[240px] transition-all duration-300 hover:scale-110"
+                  />
+                </div>
+                <p class="text-center">IPHONE CASES</p>
+                <p class="text-center">
+                  Give your iPhone one-of-a-kind character
+                </p>
+              </div>
+              <div class="flex flex-col items-center mt-10">
+                <div>
+                  <img
+                    src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/wireless-chargers.jpg?v=1630492508&width=560"
+                    alt="Chargers Image"
+                    class="mb-4 w-[240px] h-[240px] transition-all duration-300 hover:scale-110"
+                  />
+                </div>
+                <p class="text-center">CHARGERS</p>
+                <p class="text-center">Solutions to power all your tech</p>
+              </div>
+              <div class="flex flex-col items-center mt-10">
+                <div>
+                  <img
+                    src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/bundles.jpg?v=1630492520&width=560"
+                    alt="Bundles Image"
+                    class="mb-4 w-[240px] h-[240px] transition-all duration-300 hover:scale-110"
+                  />
+                </div>
+                <p class="text-center">BUNDLES</p>
+                <p class="text-center">Our essentials at a reduced price</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group dropdown cursor-pointer tracking-wide">
+          <a
+            href="#"
+            class="relative pb-5 text-white w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-white after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left"
+            >Shop by Device</a
+          >
+          <div
+            class="z-10 group-hover:block dropdown-menu absolute right-0 hidden h-[auto] bg-white text-black w-[1536px]"
+          >
+            <div class="flex justify-evenly p-[50px] animate-fadeInUp">
+              <div class="mr-10 mt-10">
+                <h4 class="font-bold">IPHONE</h4>
+                <ul>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone 12 Mini</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone 12</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone 12 Pro</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone 12 Pro Max</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone 11</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone 11 Pro</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone 11 Pro Max</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone XS</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPhone XS Max</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mr-10 mt-10">
+                <h4 class="font-bold">MACBOOK</h4>
+                <ul>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >12" MacBooks</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >13" MacBooks</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >15" MacBooks</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >16" MacBooks</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mr-10 mt-10">
+                <h4 class="font-bold">IPAD</h4>
+                <ul>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPad Pro 11"</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPad Pro 12.9"</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPad (7th & 8th Gen)</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >iPad Air (4th Gen)</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mr-10 mt-10">
+                <h4 class="font-bold">AIRPODS</h4>
+                <ul>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >AirPods Pro</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >AirPods Gen 1 & 2</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col items-center">
+                <div>
+                  <img
+                    src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/iphones.jpg?v=1630492567&width=560"
+                    alt="iPhone Image"
+                    class="mb-4 mt-10 w-[240px] h-[240px] transition-all duration-300 hover:scale-110"
+                  />
+                </div>
+                <p class="text-center">IPHONE</p>
+                <p class="text-center">
+                  Explore all iPhone products, from cases to accessories
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="group dropdown cursor-pointer tracking-wide">
+          <a
+            href="#"
+            class="relative pb-5 text-white w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-white after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left"
+            >Collections</a
+          >
+          <div
+            class="z-10 group-hover:block dropdown-menu absolute right-0 hidden h-[auto] bg-white text-black w-[1536px]"
+          >
+            <div class="flex justify-evenly p-[50px] animate-fadeInUp">
+              <div class="mr-10 mt-10">
+                <h4 class="font-bold">EXPLORE</h4>
+                <ul>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >The Heritage Collection</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Sage Collection</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Work From Home</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Stow Collection</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Classic Leather Collection</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Power Delivery Collection</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="mr-10 mt-10">
+                <h4 class="font-bold">COLLABORATIONS</h4>
+                <ul>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Maison Kitsuné</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >La Boîte Concept</a
+                    >
+                  </li>
+                  <li>
+                    <a href="#" class="block py-1 hover:text-gray-500"
+                      >Tom Dixon</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="flex flex-col items-center mt-10">
+                <div>
+                  <img
+                    src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/heritage-collection.jpg?v=1630492557&width=560"
+                    alt="The Heritage Collection"
+                    class="mb-4 w-[240px] h-[240px] transition-all duration-300 hover:scale-110"
+                  />
+                </div>
+                <p class="text-center">THE HERITAGE COLLECTION</p>
+              </div>
+              <div class="flex flex-col items-center mt-10">
+                <div>
+                  <img
+                    src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/la-boite-concept.jpg?v=1630492557&width=560"
+                    alt="La Boîte Concept"
+                    class="mb-4 w-[240px] h-[240px] transition-all duration-300 hover:scale-110"
+                  />
+                </div>
+                <p class="text-center">LA BOÎTE CONCEPT</p>
+              </div>
+              <div class="flex flex-col items-center mt-10">
+                <div>
+                  <img
+                    src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/tom-dixon.jpg?v=1630492557&width=560"
+                    alt="Tom Dixon"
+                    class="mb-4 w-[240px] h-[240px] transition-all duration-300 hover:scale-110"
+                  />
+                </div>
+                <p class="text-center">TOM DIXON</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="nav-item relative text-white group">
+          <a
+            href="#"
+            class="relative text-white w-fit block after:block after:content-[''] after:absolute after:h-[1px] after:bg-white after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left"
+            >Blog</a
+          >
+        </div>
+      </nav>
+      <div class="flex items-center space-x-6 relative">
+        <button class="text-white">
+          <svg
+            focusable="false"
+            width="20"
+            height="16"
+            class="icon icon--header-email"
+            viewBox="0 0 20 16"
+          >
+            <path
+              d="M19 4l-9 5-9-5"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+            <path
+              stroke="currentColor"
+              fill="none"
+              stroke-width="2"
+              d="M1 1h18v14H1z"
+            ></path>
+          </svg>
+        </button>
+        <button id="search-icon" class="text-white">
+          <svg
+            focusable="false"
+            width="18"
+            height="18"
+            class="icon icon--header-search"
+            viewBox="0 0 18 18"
+          >
+            <path
+              d="M12.336 12.336c2.634-2.635 2.682-6.859.106-9.435-2.576-2.576-6.8-2.528-9.435.106C.373 5.642.325 9.866 2.901 12.442c2.576 2.576 6.8 2.528 9.435-.106zm0 0L17 17"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </button>
+        <button class="text-white">
+          <svg
+            focusable="false"
+            width="18"
+            height="17"
+            class="icon icon--header-customer"
+            viewBox="0 0 18 17"
+          >
+            <circle
+              cx="9"
+              cy="5"
+              r="4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linejoin="round"
+            ></circle>
+            <path
+              d="M1 17v0a4 4 0 014-4h8a4 4 0 014 4v0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+          </svg>
+        </button>
+        <div class="relative flex">
+          <button id="cart-icon" class="text-white">
+            <svg
+              focusable="false"
+              width="20"
+              height="18"
+              class="icon icon--header-cart"
+              viewBox="0 0 20 18"
+            >
+              <path
+                d="M3 1h14l1 16H2L3 1z"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              ></path>
+              <path
+                d="M7 4v0a3 3 0 003 3v0a3 3 0 003-3v0"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              ></path>
+            </svg>
+          </button>
+          <span
+            class="absolute bottom-1 left-3 -mt-1 -mr-1 bg-white text-black text-xs font-semibold rounded-full w-5 h-5 flex items-center justify-center"
+            >0</span
+          >
+        </div>
+      </div>
+    </header>
+
+    <!-- Search Section -->
+    <div
+      id="search-section"
+      class="absolute z-10 inset-y-0 top-0 right-0 w-1/3 bg-white text-black transform translate-x-full transition-transform"
+    >
+      <div class="flex justify-start gap-4 p-[19px] border-b-2">
+        <input
+          type="text"
+          class="w-full p-2"
+          placeholder="What are you looking for?"
+        />
+        <button id="close-search" class="focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="p-8">
+        <h2 class="font-bold">POPULAR</h2>
+        <ul class="space-y-2 mt-2">
+          <li><a href="#" class="hover:underline">iPhone Cases</a></li>
+          <li>
+            <a href="#" class="hover:underline">The Heritage Collection</a>
+          </li>
+          <li><a href="#" class="hover:underline">La Boîte Concept</a></li>
+          <li><a href="#" class="hover:underline">Maison Kitsuné</a></li>
+        </ul>
+        <h2 class="font-bold mt-8">INFORMATION</h2>
+        <ul class="space-y-2 mt-2">
+          <li><a href="#" class="hover:underline">Our Story</a></li>
+          <li><a href="#" class="hover:underline">Contact</a></li>
+          <li><a href="#" class="hover:underline">FAQ</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cart Section -->
+    <div
+      id="cart-section"
+      class="absolute z-10 inset-y-0 right-0 w-1/3 bg-white text-black transform translate-x-full transition-transform"
+    >
+      <div class="flex justify-between p-[11px] border-b-2">
+        <div class="flex gap-6 items-center p-4">
+          <svg
+            focusable="false"
+            width="20"
+            height="18"
+            class="icon icon--header-cart"
+            viewBox="0 0 20 18"
+          >
+            <path
+              d="M3 1h14l1 16H2L3 1z"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+            <path
+              d="M7 4v0a3 3 0 003 3v0a3 3 0 003-3v0"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            ></path>
+          </svg>
+          <h2 class="font-bold">CART</h2>
+        </div>
+
+        <button id="close-card" class="focus:outline-none">
+          <svg
+            class="w-6 h-6"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
+        </button>
+      </div>
+      <div class="mt-[150px] felx items-center justify-center text-center">
+        <p class="my-4">Your cart is empty</p>
+        <button
+          class="mt-4 bg-blue-500 text-white font-semibold px-[50px] py-4 hover:bg-blue-400"
+        >
+          Strat shopping
+        </button>
+      </div>
+    </div>
+
+    <!--  swiper section  -->
+
+    <div class="swiper w-full h-[614px] relative z-[0]">
+      <!-- Additional required wrapper -->
+      <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide relative">
+          <img
+            class="object-center w-full object-cover"
+            src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/heritage-lp-3.jpg?v=1630492874&width=2000"
+            alt="The Heritage Collection"
+          />
+          <div
+            class="absolute inset-0 flex flex-col justify-center items-start px-8 my-[150px] animate-fadeInUp"
+          >
+            <span class="text-white text-sm uppercase mb-7"
+              >Premium Collection</span
+            >
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">
+              The Heritage
+            </h1>
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">
+              Collection
+            </h1>
+            <div class="flex space-x-6">
+              <button
+                href="#"
+                class="bg-yellow-300 text-black px-6 py-3 text-sm font-semibold uppercase w-[175px] hover:bg-yellow-400"
+              >
+                Learn More
+              </button>
+              <button
+                href="#"
+                class="bg-yellow-300 text-black px-10 py-3 text-sm font-semibold uppercase w-[175px] hover:bg-yellow-400"
+              >
+                Shop
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide relative">
+          <div class="flex flex-1">
+            <img
+              class="object-center w-1/2 object-cover"
+              src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/sage1-desktop.jpg?v=1630492840&width=1000"
+              alt=""
+            />
+            <img
+              class="object-center w-1/2 object-cover"
+              src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/sage2-desktop.jpg?v=1630492847&width=1000"
+              alt=""
+            />
+          </div>
+          <div
+            class="absolute inset-0 flex flex-col justify-center items-center px-8 animate-fadeInUp"
+          >
+            <span class="text-white text-sm uppercase mb-7">Meet the</span>
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">Sage</h1>
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">
+              Collection
+            </h1>
+            <div class="flex space-x-6">
+              <button
+                href="#"
+                class="bg-yellow-300 text-black px-6 py-3 text-sm font-semibold uppercase w-[175px] hover:bg-yellow-400"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide relative">
+          <img
+            class="object-center w-full object-cover"
+            src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/tom-dixon-lp-tile-1.jpg?v=1630492908&width=2000"
+            alt=""
+          />
+          <div
+            class="absolute inset-0 flex flex-col justify-center items-start px-8 animate-fadeInUp"
+          >
+            <span class="text-white text-sm uppercase mb-7">Collaboration</span>
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">
+              Native Union x
+            </h1>
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">
+              Tom Dixon
+            </h1>
+            <div class="flex space-x-6">
+              <button
+                href="#"
+                class="bg-yellow-300 text-black px-6 py-3 text-sm font-semibold uppercase w-[175px] hover:bg-yellow-400"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="swiper-slide relative">
+          <div class="flex flex-1">
+            <img
+              class="object-center w-1/2 object-cover"
+              src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/jump1-desktop.jpg?v=1630492933&width=1000"
+              alt=""
+            />
+            <img
+              class="object-center w-1/2 object-cover"
+              src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/jump2-desktop.jpg?v=1630492956&width=1000"
+              alt=""
+            />
+          </div>
+          <div
+            class="absolute inset-0 flex flex-col justify-center items-center px-8 animate-fadeInUp"
+          >
+            <span class="text-white text-sm uppercase mb-7"
+              >Charge anywhere, anytime</span
+            >
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">
+              New Jump+
+            </h1>
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">
+              Powerbank
+            </h1>
+            <div class="flex space-x-6">
+              <button
+                href="#"
+                class="bg-yellow-300 text-black px-6 py-3 text-sm font-semibold uppercase w-[175px] hover:bg-yellow-400"
+              >
+                Shop Jump+
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-slide relative">
+          <img
+            class="object-center w-full object-cover"
+            src="https://focal-theme-carbon.myshopify.com/cdn/shop/files/mk-lp-tile-1.jpg?v=1630493139&width=2000"
+            alt=""
+          />
+          <div
+            class="absolute inset-0 flex flex-col justify-center items-start px-8 animate-fadeInUp"
+          >
+            <span class="text-white text-sm uppercase mb-7">New in</span>
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">
+              The Maison
+            </h1>
+            <h1 class="text-white text-8xl md:text-8xl font-bold mb-4">
+              Kitsuné Collab
+            </h1>
+            <div class="flex space-x-6">
+              <button
+                href="#"
+                class="bg-yellow-300 text-black px-6 py-3 text-sm font-semibold uppercase w-[175px] hover:bg-yellow-400"
+              >
+                Learn More
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Add more slides as needed -->
+      </div>
+      <!-- If we need pagination -->
+      <div class="swiper-pagination"></div>
+    </div>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+
+    <script src="swiper.js"></script>
+
+    <script src="srcipt.js"></script>
+  </body>
+</html>
